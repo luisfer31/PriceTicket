@@ -15,7 +15,6 @@ public class App2 {
     static boolean stop = true;
     public static void main(String[] args) {
         Timer timer = new Timer();
-
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
