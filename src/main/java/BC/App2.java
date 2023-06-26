@@ -21,7 +21,7 @@ public class App2 {
             public void run() {
 
                 try {
-                    URL url = new URL("https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT");
+                    URL url = new URL("https://fapi.binance.com/fapi/v1/ticker/price?symbol=BTCUSDT");
                     URLConnection connectionBC = url.openConnection();
                     //System.out.println("Connected to Binance BTCUSDT");
                     // Read de end point contend
@@ -43,10 +43,11 @@ public class App2 {
                 }
             }
         };
-        if (stop){
-
-            timer.scheduleAtFixedRate(task,0,1500);
-        }
+        timer.scheduleAtFixedRate(task,0,1500);
+//        if (stop){
+//
+//
+//        }
 
     }
 }
