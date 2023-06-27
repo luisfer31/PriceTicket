@@ -14,7 +14,7 @@ import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class App3 {
+public class App4 {
     static Scanner scan = new Scanner(System.in);
     static double actualPrice;
     static double startPrice;
@@ -57,7 +57,7 @@ public class App3 {
                 String earnFormat = "";
                 System.out.println(priceBC().getPrice());
                 System.out.println("Star " + startPrice);
-                if (Double.valueOf(priceBC().getPrice()) <= (startPrice - factorRisk)) {
+                if (Double.valueOf(priceBC().getPrice()) <= (startPrice - factorRisk) ) {
                     System.out.println("buy buy buy...");
                     Toolkit.getDefaultToolkit().beep();
 //                    beepAlert();
