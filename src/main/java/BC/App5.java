@@ -122,6 +122,7 @@ public class App5 {
         thread.start();
         // Mostrar la ventana
         frame.setVisible(true);
+
     }
 
     private static String btcRealTimeInformation() {
