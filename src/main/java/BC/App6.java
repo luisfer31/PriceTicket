@@ -52,7 +52,7 @@ public class App6 {
 
     public static void repeatInstructions() {
         Timer timer = new Timer();
-        File alert = new File("src/main/java/BC/btc_alarm.wav");
+        File alert = new File("src/main/java/resource/btc_alarm.wav");
         TimerTask task = new TimerTask() {
             String earnFormat = "";
 
