@@ -2,7 +2,7 @@ package BC;
 
 import javax.swing.*;
 
-public class Test1 {
+public class Window {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Ventana Emergente");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
