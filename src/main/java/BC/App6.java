@@ -2,14 +2,12 @@ package BC;
 
 import com.google.gson.Gson;
 
+import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.*;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.DecimalFormat;
@@ -52,7 +50,7 @@ public class App6 {
 
     public static void repeatInstructions() {
         Timer timer = new Timer();
-        File alert = new File("src/main/java/BC/btc_alarm.wav");
+        File alert = new File("src/main/resources/btc_alarm.wav");
         TimerTask task = new TimerTask() {
             String earnFormat = "";
 
@@ -155,10 +153,16 @@ public class App6 {
         return factorRisk;
     }
     public static void btcAlert(File sound){
+
         for (int i = 0; i < 10; i++) {
             try {
+                InputStream input = App6.class.getClassLoader().getResourceAsStream("btc_alarm.wav");
+                InputStream bufferIn = new BufferedInputStream(input);
+                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(bufferIn);
+
                 Clip clip = AudioSystem.getClip();
-                clip.open(AudioSystem.getAudioInputStream(sound));
+
+                clip.open(audioInputStream);
                 clip.start();
                 Thread.sleep(clip.getMicrosecondLength()/1000);
 
